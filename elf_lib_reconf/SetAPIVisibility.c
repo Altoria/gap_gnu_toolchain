@@ -810,8 +810,8 @@ static Token_T GetNextToken(FILE *Fi, char *Str, int *LineNo)
                 }
 
         }
-	if (isalnum(c)) {
-                while (isalnum(c)) {
+	if (isalnum(c) || (c=='_')) {
+                while (isalnum(c) || (c=='_')) {
                         Str[p++] = c;
                         c = fgetc(Fi);
                 }
